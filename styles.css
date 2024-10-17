@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 :root{
+  --clr-fuchsia-100: #fdf4ff;
   --clr-fuchsia-700: #a21caf;
   --clr-neutral-100: #f5f5f5;
 }
@@ -11,8 +12,8 @@
   box-sizing: border-box;
 }
 
-.container > * {
-  border: 1px solid red;
+.container > div {
+  /* border: 1px solid red; */
   padding: 15px;
 }
 
@@ -42,9 +43,9 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-}
+  list-style-type: none;
+  margin-bottom: 15px;
 
-.dashboard p{
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--clr-neutral-100);
@@ -57,18 +58,11 @@ li svg{
   fill: var(--clr-neutral-100);
 }
 
-li svg{
+.dashboard ul li svg{
   height: 20px;
 }
 
-.dashboard ul li{
-  list-style-type: none;
-  margin-bottom: 15px;
-
-}
-
 .dashboard ul li a{
-
   color: var(--clr-neutral-100);
   text-decoration: none;
   font-weight: 600;
@@ -77,14 +71,56 @@ li svg{
   min-width: 110px;
 }
 
-.header-search{
-  grid-column: 2 / 3;
+.header-container{
+  display: grid;
+  grid-template-rows: minmax(50px, 0.3fr) minmax(80px, 0.5fr);
+
+  background-color: #f0abfc
 }
+
+.header,
+.user-info,
+.search{
+  display: flex;
+  align-items: center;
+}
+
+.header{
+  justify-content: space-between;
+}
+
+.notification svg,
+label svg{
+  height: 40px;
+}
+
+.search{
+  flex-grow: 2;
+}
+
+input[type="text"]{
+  width: clamp(200px, 60%, 500px);
+  height: 1.8rem;
+  border-radius: 20px;
+
+  border: 1px solid red;
+  background-color: var(--clr-fuchsia-100);
+}
+
+
+.profile-pic img{
+  border-radius: 20px;
+  height: 40px;
+  width: 40px;
+}
+
+
 
 .main-content{
   display: grid;
   grid-template-columns: 4fr;
   grid-template-rows: 1fr 1fr;
+  background-color: var(--clr-fuchsia-100);
 }
 
 .card-container{
@@ -102,6 +138,7 @@ li svg{
 
   .dashboard-header svg,
   .dashboard ul li svg{
+    min-width: 40px;
     margin: 5px 0;
     flex-grow: 1;
   }
