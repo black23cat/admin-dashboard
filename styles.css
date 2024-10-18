@@ -115,7 +115,6 @@ input[type="text"]:hover{
   box-shadow: 0 0 3px var(--shador-clr-gray-500)
 }
 
-
 input[type="text"]:focus{
   outline: 2px solid var(--clr-fuchsia-700);
 }
