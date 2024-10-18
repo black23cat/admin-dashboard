@@ -25,7 +25,7 @@
 .container{
   display: grid;
   grid-template-columns: minmax(70px, 1fr) 4fr;
-  grid-template-rows: minmax(180px, 1fr) 5fr;
+  grid-template-rows: minmax(190px, 1fr) 5fr;
 
   font-family: "Roboto", sans-serif;
 }
@@ -78,31 +78,22 @@ li svg{
 
 .header-container{
   display: grid;
-  grid-template-rows: minmax(50px, 0.3fr) minmax(80px, 0.5fr);
+  grid-template-columns: 2fr 1fr;
   gap: 20px;
   background-color: var(--clr-fuchsia-300);
 }
-.header,
-.header.top > div,
-.header.btm > div{
+
+.header-container > div:not([class="button"]){
   display: flex;
   align-items: center;
 }
 
-.header{
-  justify-content: space-between;
-  margin: 0 3% 0 25px;
-}
 
 .notification svg,
 .search svg{
   fill: var(--clr-fuchsia-100);
   filter: drop-shadow(0 0 3px var(--shador-clr-gray-500));
   height: 25px;
-}
-
-.search{
-  flex-grow: 2;
 }
 
 input[type="text"]{
@@ -161,6 +152,7 @@ input[type="text"]:focus{
 .button{
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .button button{
@@ -170,20 +162,27 @@ input[type="text"]:focus{
   font-size: 1.2rem;
   font-weight: 600;
 
-  padding: 8px 15px;
-  margin-right: 20px;
-  margin-bottom: 5px;
+  padding: 6px;
+  margin: 5px;
   border: none;
   border-radius: 25px;
+  flex-grow: 1;
 }
 
 .button button:hover{
+  top: 1px;
+  border-bottom-width: 3px;
+  margin-bottom: 1px;
+
   border: 2px solid var(--clr-fuchsia-100);
   cursor: pointer;
   background-color: var(--clr-fuchsia-600);
 }
 
 .button button:active{
+  top: 2px;
+  border-bottom-width: 2px;
+  margin-bottom: 1px;
   background-color: var(--clr-fuchsia-800);
 }
 
