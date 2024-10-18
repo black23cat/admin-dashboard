@@ -17,17 +17,17 @@
   box-sizing: border-box;
 }
 
-.container > div {
-  /* border: 1px solid red; */
-  padding: 15px;
-}
-
 .container{
   display: grid;
   grid-template-columns: minmax(70px, 1fr) 4fr;
   grid-template-rows: minmax(190px, 1fr) 5fr;
 
   font-family: "Roboto", sans-serif;
+}
+
+.container > div {
+  /* border: 1px solid red; */
+  padding: 15px;
 }
 
 .dashboard{
@@ -83,11 +83,14 @@ li svg{
   background-color: var(--clr-fuchsia-300);
 }
 
-.header-container > div:not([class="button"]){
+.header-container > div{
   display: flex;
   align-items: center;
 }
 
+.header-container > div:nth-child(odd){
+  margin-left: clamp(10px, 2.5vw, 35px);
+}
 
 .notification svg,
 .search svg{
@@ -149,10 +152,13 @@ input[type="text"]:focus{
   font-size: 1.3rem;
 }
 
+.user-info,
 .button{
-  display: flex;
+  justify-self: center;
+}
+
+.button{
   flex-wrap: wrap;
-  align-items: center;
 }
 
 .button button{
